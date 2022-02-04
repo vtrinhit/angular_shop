@@ -1,0 +1,33 @@
+version: '3.4'
+services:
+  mssql:
+    image: 'mcr.microsoft.com/azure-sql-edge'
+    ports:
+      - '7900:1433'
+    container_name: mssql
+    environment:
+      MSSQL_SA_PASSWORD: 'Sup3rS3cr3t'
+      ACCEPT_EULA: 'Y'
+      MSSQL_PID: 'Developer'
+      MSSQL_USER: 'sa'
+    volumes:
+      - 'mssql:/var/opt/mssql'
+    networks:
+      rd: null
+  api:
+    image: 'linhlefpt/vs:arm64'
+    container_name: api
+    environment:
+      - 'ConnectionStrings__DbConnection=Data Source=mssql;Initial Catalog=vs;Persist Security Info=True;User ID=sa;password=Sup3rS3cr3t'
+    ports:
+      - "8080:80"
+    depends_on:
+      - mssql
+    networks:
+      rd: null
+volumes:
+  mssql:
+    driver: local
+networks:
+  rd:
+    driver: bridge

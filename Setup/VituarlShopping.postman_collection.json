@@ -1,0 +1,802 @@
+{
+	"info": {
+		"_postman_id": "440592db-1260-4e4f-83ef-e29fbcfe835d",
+		"name": "VituarlShopping",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Get Cart By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Cart/a97ac7?getShop=true",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Cart",
+								"a97ac7"
+							],
+							"query": [
+								{
+									"key": "getShop",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerId\": \"bc5e64\",\r\n  \"shopId\": \"acd839\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Cart/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Cart",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add item into cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 0,\r\n  \"itemId\": \"string\",\r\n  \"customerId\": \"string\",\r\n  \"cartId\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Cart//add/item",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Cart",
+								"",
+								"add",
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit items to cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"items\": [\r\n    {\r\n      \"amount\": 0,\r\n      \"itemId\": \"string\",\r\n      \"isDeleted\": true\r\n    }\r\n  ],\r\n  \"customerId\": \"string\",\r\n  \"cartId\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Cart/submit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Cart",
+								"submit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unsubmit items in cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerId\": \"string\",\r\n  \"cartId\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Cart/unsubmit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Cart",
+								"unsubmit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get exist cart by ShopId and CustomerId",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerId\": \"string\",\r\n  \"shopId\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Cart/exist/shop/customer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Cart",
+								"exist",
+								"shop",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Removed co-making by host",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerId\": \"string\",\r\n  \"cartId\": \"string\",\r\n  \"customerIdToRemoved\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Cart/remove/customer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Cart",
+								"remove",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tan",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "0911345992",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/D:/WORKING/FSOFT/TRAINING/Assignment 1/StudentAssets/user.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/Customer/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Customer",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tan",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "0911345992",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/D:/WORKING/FSOFT/TRAINING/Assignment 1/StudentAssets/user.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/Customer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"phoneNumber\": \"0911345992\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Customer/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Customer/delete?customerId=0932483992",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Customer",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "0932483992"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "shopId",
+									"value": "f34a3f",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Cà ri rán",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "35000",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/nhatt/Downloads/com-ga-xoi-mo 1212313123.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/item/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "shopId",
+									"value": "f34a3f",
+									"type": "text"
+								},
+								{
+									"key": "itemId",
+									"value": "ff548c",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Cà ri rán",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "35000",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/nhatt/Downloads/com-ga-xoi-mo 1212313123.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/item",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"shopId\": \"string\",\r\n  \"itemId\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/item",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get item by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/item/ff548c",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item",
+								"ff548c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"shopId\": \"string\",\r\n  \"itemid\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/item/active",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item",
+								"active"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get Order by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/order/714605",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"714605"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Placed new order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cartId\": \"string\",\r\n  \"deliveryInformation\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"orderId\": \"string\",\r\n  \"customerId\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order/cancel",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change order status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"orderId\": \"string\",\r\n  \"orderStatus\": \"string\",\r\n  \"customerId\": \"string\",\r\n  \"shopId\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order/status",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all orders of Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/order/734566/Customer/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"734566",
+								"Customer",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all orders of Shop",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/order/f5519d/shop/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"f5519d",
+								"shop",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shop",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Nha hang gao",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "0911345992",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/D:/WORKING/FSOFT/TRAINING/Assignment 1/StudentAssets/user.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/Shop/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Shop",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"phoneNumber\": \"0911345992\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/shop/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shop",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tan",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "0911345992",
+									"type": "text"
+								},
+								{
+									"key": "newPhoneNumber",
+									"value": "093458962",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/D:/WORKING/FSOFT/TRAINING/Assignment 1/StudentAssets/user.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/shop",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"phoneNumber\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/shop/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shop",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get shop by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/shop/167fdc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shop",
+								"167fdc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

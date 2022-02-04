@@ -1,0 +1,42 @@
+Một hệ thống để mua sắm cùng nhau trực tuyến. Người dùng tham gia vào một phiên mua sắm cộng tác bằng cách sử dụng
+một giỏ hàng ảo và chia sẻ thông tin với những người khác
+
+Yêu cầu về chức năng
+Cửa hàng / Nhà hàng
+● Cập nhật tên biểu trưng,
+● Có thể chia sẻ LINK rút gọn hoặc QR (liên kết rút gọn)
+● Tạo menu với giá
+● Nhận đơn đặt hàng từ khách hàng (thời gian thực)
+● In biên lai cho mỗi đơn đặt hàng
+● Trả lời khách hàng về trạng thái đơn hàng: Đã xác nhận, Đã gửi đến nhà bếp, Sẵn sàng cho
+Nhận / Sẵn sàng giao hàng, Đã giao
+● Cho khách hàng biết về ước tính nấu ăn (10, 15, 20 phút), hãy cho khách hàng
+biết nếu thời gian thực hiện thay đổi và lý do
+
+Khách hàng
+● Truy cập liên kết Shop thông qua liên kết rút gọn hoặc mã QR
+● Xem menu với giá cả
+● Bắt đầu đặt hàng bằng cách thêm mặt hàng vào giỏ hàng
+● Mời bạn bè cùng thực hiện đơn hàng (chia sẻ liên kết rút gọn giỏ hàng hoặc ID giỏ hàng)
+● Xem các mục được người khác thêm vào (thời gian thực)
+● Gửi đơn đặt hàng kèm theo thông tin giao hàng (chỉ máy chủ)
+● Xem tóm tắt đơn hàng và trạng thái trên theo dõi đơn hàng (thời gian thực)
+● Xem hóa đơn được chia nhỏ cho từng thành viên
+● Khách có thể đánh dấu là đã hoàn thành
+
+Ngăn xếp kỹ thuật
+● Giao diện người dùng: ReactJS hoặc Angular, Bootstrap, Ứng dụng web tiến bộ (PWA)
+● Phần phụ trợ:
+○ .NET Core, SQL, SignalR
+
+Yêu cầu phi chức năng & phân phối
+● Web đáp ứng (trước tiên trên thiết bị di động)
+● Có kế hoạch và mốc quan trọng cho Giao hàng / DEMO
+● Yêu cầu kiểm tra đơn vị bao phủ 60% và nhà phát triển phải tự tìm công cụ để quét
+và xem báo cáo về mức độ phù hợp của mã
+● Không cần đăng nhập và đăng ký để giảm trải nghiệm người dùng phức tạp cho khách hàng
+● Yêu cầu xác thực dữ liệu và thông báo (bánh mì nướng)
+
+-------------
+Các mục được đánh dấu màu vàng là các tính năng tùy chọn (rất tuyệt khi có)
+Yêu cầu ít nhất 10% Unit Test, hiển thị bằng chứng UT về các tính năng chính.
